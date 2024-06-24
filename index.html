@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="public/main.css">
+  <title>Weather</title>
+</head>
+
+<body>
+<div class="app">
+<!-- the whole app in a div -->
+  <div class="search-bar">
+    <input type="text" placeholder="Enter city" name="city" id="city">
+    <button class="submitCity">
+      <img src="public/pics/search.png" id ="search" height="14px">
+    </button>
+  </div>
+
+  <div class="container">
+    <!-- the image/icon that should keep changing based on weather -->
+    <div class="icon">
+      <img src="public/pics/cloudy.png" class="weatherIcon" height="50px">
+    </div>
+    <!-- the temperature and the city displayed in h1 if possible -->
+    <div class="mainTxt">
+      <h1 class="large">22°C</h1>
+      <h3 class="small">New York</h3>
+    </div>
+    <!-- the 2 cards for humidity and windspeed -->
+        <div class="humidity s">
+          <img src="public/pics/humidity.png" class="humid p">
+          <div class="inTxt">
+            <div class="num">50%</div>
+            <div class="desc">Humidity</div>
+          </div>
+        </div>
+        <div class="windSpeed s">
+          <img src="public/pics/wind.png" class="wind p">
+          <div class="inTxt">
+            <div class="num">15km/h</div>
+            <div class="desc">Wind Speed</div>
+          </div>
+        </div>
+
+  </div>
+  
+</div>
+<script src="work.js"></script>
+</body>
+
+</html>
+
+<!--username:website-->
+<!--password:weatherweb-->
+<!--apikey:de5ad2b727ddb06562f5a95570fb067d-->

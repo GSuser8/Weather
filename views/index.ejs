@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css">
+  <title>Weather</title>
+</head>
+
+<body>
+  <div class="app">
+    <!-- the whole app in a div -->
+    <div class="search-bar">
+      <form action="/submit" method="POST">
+        <input type="text" name="cityUser" id="city" placeholder="enter city">
+        <button>
+          <img src="pics/search.png" class="submitCity"> 
+        </button>
+      </form>
+    </div>
+
+    <%if(locals.beginning===0){%>
+      <img src="pics/worldwide.png" class="enterfirst">
+    <%}else if(locals.notFound===0){%>
+      <img src="pics/smartphone.png" class="enterfirst">
+    <%} else{%>
+      <div class="container">
+        <!-- the image/icon that should keep changing based on weather -->
+        <div class="icon">
+          <%if(temp<6){%>
+            <img src="pics/winter.png" class="weatherIcon" height="50px">
+          <%}else if(temp>=6 && temp<30){%>
+            <img src="pics/sun.png" class="weatherIcon" height="50px">
+          <%} else if(temp>=30){%>
+            <img src="pics/hot.png" class="weatherIcon" height="50px">
+          <%}%>
+        </div>
+        <!-- the temperature and the city displayed in h1 if possible -->
+        <div class="mainTxt">
+          <h1 class="large">
+            <%= temp%>°C
+          </h1>
+          <h3 class="small">
+            <%= cityName%>
+          </h3>
+        </div>
+        <!-- the 2 cards for humidity and windspeed -->
+        <div class="humidity s">
+          <img src="pics/humidity.png" class="humid p">
+          <div class="inTxt">
+            <div class="num">
+              <%=humidity%>%
+            </div>
+            <div class="desc">Humidity</div>
+          </div>
+        </div>
+        <div class="windSpeed s">
+          <img src="pics/wind.png" class="wind p">
+          <div class="inTxt">
+            <div class="num">
+              <%=windSpeed%>km/h
+            </div>
+            <div class="desc">Wind Speed</div>
+          </div>
+        </div>
+    
+      </div>
+    <%}%>
+  </div>
+</body>
+
+</html>
+
+<!--username:website-->
+<!--password:weatherweb-->
+<!--apikey:de5ad2b727ddb06562f5a95570fb067d-->
